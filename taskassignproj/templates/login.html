@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+    {% block head %}
+    <title>Login</title>
+    {% endblock %}
+{% block body %}
+
+    <div class="container">
+    <div id="login">
+        <form class="form-horizontal" name="LoginForm" action="/loginform/" method="post">
+        {% csrf_token %}
+
+        <div class="center-block">
+        <div class="control-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input type="text" id="username" name="username"  placeholder="Username">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <p>
+                    <br>
+                <button type="submit" class="btn btn-primary">Login</button>
+                </p>
+            </div>
+        </div>
+
+        </div>
+        </form>
+    </div>
+    </div>
+
+{% endblock %}

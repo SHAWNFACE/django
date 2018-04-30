@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+</head>
+<body>
+{% block body %}
+<div class="container">
+ <label></label>
+      <form class="form-horizontal" name="LoginForm" action="/admininsert/" method="post">
+        {% csrf_token %}
+	<textarea name="Text1" cols="40" rows="5"></textarea>
+      <select style="width:30%" multiple class="form-control" name="selmul">
+          {% for userli in usernamelist %}
+        <option>{{ userli.username }}</option>
+        {% endfor %}
+      </select>
+<br>
+<button type="submit" class="btn btn-primary">submit</button>
+   </form>
+{{inser_msg}}
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{% block head %}
+    <title>customer</title>
+<style>
+table {
+ width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+}
+th{
+text-align: center;
+ background-color: #4CAF50;
+    color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+td{
+padding: 15px;
+}
+</style>
+{% endblock %}
+</head>
+<body>
+{% block body %}
+<div class="container">
+<table bgcolor="#FFFFFF">
+  <thead>
+    <tr>
+      <th>Your TaskList</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in task_list %}
+    <tr>
+      <td>{{ task }}</td>
+        {% endfor %}
+    </tr>
+  </tbody>
+</table>
+</div>
+{% endblock %}
+</body>
+</html>
